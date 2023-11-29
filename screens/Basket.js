@@ -31,7 +31,7 @@ export function Basket() {
 const styles = StyleSheet.create({
     headerImage: {
         width: '100%',
-        height: 578 / 768 * width // Conta para calcular
+        height: 578 / 768 * width // Conta para calcular,
 
     },
     title: {
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         color: '#464646',
-        fontWeight: 'bold'
+        fontFamily:"MontserratBold"
     },
     farm:{
         flexDirection:'row',
@@ -65,7 +65,8 @@ const styles = StyleSheet.create({
     farmName: {
         fontSize: 16,
         lineHeight: 26,
-        marginLeft:12
+        marginLeft:12,
+        fontFamily:"MontserratRegular"
 
     },
     description: {
