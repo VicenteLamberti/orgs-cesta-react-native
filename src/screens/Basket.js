@@ -1,6 +1,6 @@
 import { Image, StyleSheet, Text, Dimensions, View } from "react-native";
-import headerImage from '../assets/topo.png'
-import logo from '../assets/logo.png'
+import headerImage from '../../assets/topo.png'
+import logo from '../../assets/logo.png'
 
 const width = Dimensions.get('screen').width;
 
