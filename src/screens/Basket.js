@@ -1,6 +1,7 @@
 import { Image, StyleSheet, Text, Dimensions, View } from "react-native";
 import headerImage from '../../assets/topo.png'
 import logo from '../../assets/logo.png'
+import TextCustom from "../components/TextCustom";
 
 const width = Dimensions.get('screen').width;
 
@@ -8,20 +9,20 @@ export function Basket() {
     return (
         <>
             <Image source={headerImage} style={styles.headerImage} />
-            <Text style={styles.title}>Detail of Basket</Text>
+            <TextCustom style={styles.title}>Detail of Basketas</TextCustom>
 
             <View style={styles.basket}>
-                <Text style={styles.name}>Vegetable Basket</Text>
+                <TextCustom style={styles.name}>Vegetable Basket</TextCustom>
                 <View style={styles.farm}>
                     <Image source={logo} style={styles.farmImage}/>
-                    <Text style={styles.farmName}>Jenny Jack Farm</Text>
+                    <TextCustom style={styles.farmName}>Jenny Jack Farm</TextCustom>
                 </View>
 
-                <Text style={styles.description}>
+                <TextCustom style={styles.description}>
                     A basket with carefully selected
                     products from the farm straight to your kitchen
-                </Text>
-                <Text style={styles.price}>R$ 40,00</Text>
+                </TextCustom>
+                <TextCustom style={styles.price}>R$ 40,00</TextCustom>
             </View>
         </>
 
