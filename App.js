@@ -1,24 +1,43 @@
 
-import { SafeAreaView, StatusBar, View } from 'react-native';
+import { SafeAreaView, StatusBar } from 'react-native';
 import { Basket } from './src/screens/Basket';
+import mock from './src/mocks/basket';
 import { useFonts,  Montserrat_400Regular, Montserrat_700Bold} from '@expo-google-fonts/montserrat';
+import { useCallback, useEffect } from 'react';
+import * as SplashScreen from 'expo-splash-screen';
 
 export default function App() {
-  const [fontLoaded] = useFonts({
-    "MontserratRegular":Montserrat_400Regular,
-    "MontserratBold":Montserrat_700Bold
+  const [fontsLoaded] = useFonts({
+    MontserratRegular: Montserrat_400Regular,
+    MontserratBold: Montserrat_700Bold,
   });
 
-  if(!fontLoaded){
-    return<View/>
+  useEffect(() => {
+    async function prepare() {
+      try {
+        await SplashScreen.preventAutoHideAsync();
+      } catch (e) {
+        console.warn(e);
+      }
+    }
+    prepare();
+  }, []);
+
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
   }
 
   return (
-    <SafeAreaView >
-      <StatusBar/>
-      <Basket/>
+    <SafeAreaView style={{ flex: 1 }} onLayout={onLayoutRootView}>
+      <StatusBar />
+      <Basket {...mock} />
     </SafeAreaView>
   );
 }
-
 

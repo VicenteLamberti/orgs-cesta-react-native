@@ -1,7 +1,7 @@
 import { Text, StyleSheet } from "react-native";
 
 export default function TextCustom( { children, style } ) {
-    let styleDefault = style.text;
+    let styleDefault = styles.text;
     if(style?.fontWeight === 'bold'){
         styleDefault = styles.boldText;
     }
